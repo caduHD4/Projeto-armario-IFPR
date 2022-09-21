@@ -1,4 +1,4 @@
-package br.edu.ifpr.paranavai.armarios.conexao;
+package br.edu.ifpr.paranavai.conexao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

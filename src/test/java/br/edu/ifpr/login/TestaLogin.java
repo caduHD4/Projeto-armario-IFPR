@@ -1,6 +1,6 @@
 package br.edu.ifpr.login;
 
-import br.edu.ifpr.paranavai.armarios.controller.LoginController;
+import br.edu.ifpr.paranavai.controller.LoginController;
 import org.junit.Assert;
 import org.junit.Test;
 

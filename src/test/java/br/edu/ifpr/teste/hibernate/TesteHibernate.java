@@ -1,6 +1,6 @@
 package br.edu.ifpr.teste.hibernate;
-import br.edu.ifpr.paranavai.armarios.conexao.HibernateUtil;
-import br.edu.ifpr.paranavai.armarios.model.Armario;
+import br.edu.ifpr.paranavai.conexao.HibernateUtil;
+import br.edu.ifpr.paranavai.model.Armario;
 import org.hibernate.Session;
 
 public class TesteHibernate {

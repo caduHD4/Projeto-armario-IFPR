@@ -2,17 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.ifpr.paranavai.armarios.view;
+package br.edu.ifpr.paranavai.view;
 
-import br.edu.ifpr.paranavai.armarios.controller.LoginController;
-import br.edu.ifpr.paranavai.armarios.view.BibliotecarioIndex;
-import java.awt.Button;
+import br.edu.ifpr.paranavai.controller.LoginController;
+
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.TextField;
-import java.util.Locale;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 /**
  *
