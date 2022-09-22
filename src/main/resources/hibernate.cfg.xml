@@ -17,14 +17,8 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">false</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="br.edu.ifpr.paranavai.model.Armario" />
-        <!-- Classes que serão persistidas em sala e/ou trabalho -->
-        <!--
-        <mapping class="br.edu.ifpr.paranavai.armarios.modelo.Bibliotecario" />
-        <mapping class="br.edu.ifpr.paranavai.armarios.modelo.Estudante" />
-        <mapping class="br.edu.ifpr.paranavai.armarios.modelo.Localizacao" />
-        <mapping class="br.edu.ifpr.paranavai.armarios.modelo.Pessoa" />
-        <mapping class="br.edu.ifpr.paranavai.armarios.modelo.Reserva" />
-        -->
+        <mapping class="br.edu.ifpr.paranavai.model.Armario"/>
+        <mapping class="br.edu.ifpr.paranavai.model.Bibliotecario"/>
+        <mapping class="br.edu.ifpr.paranavai.model.Estudante"/>
     </session-factory>
 </hibernate-configuration>
