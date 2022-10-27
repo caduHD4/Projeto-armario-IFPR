@@ -1,29 +1,27 @@
 package br.edu.ifpr.paranavai.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
-public class Pessoa {
+public abstract class Pessoa implements Serializable{
     private String nome;
-    private String email;
-    private String telefone;
-    private String senha;
-    private boolean ativo;
-    private Date dataAtualizacao;
-    private Date dataCriacao;
     
-    public Pessoa() {
-        
-    }
-
-    public Pessoa(String nome, String email, String telefone, String senha, boolean ativo, Date dataAtualizacao, Date dataCriacao) {
-        super();
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.senha = senha;
-        this.ativo = ativo;
-        this.dataAtualizacao = dataAtualizacao;
-        this.dataCriacao = dataCriacao;
-    }
-     
+    private String email;
+    
+    private String telefone;
+    
+    private String senha;
+    
+    private boolean ativo;
+    
+    private Date dataAtualizacao;
+    
+    private Date dataCriacao;
 }

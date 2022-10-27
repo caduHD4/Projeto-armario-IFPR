@@ -14,7 +14,7 @@ public class Bibliotecario extends Pessoa{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "bibliotecario_id", unique = true, nullable = false)
+    @Column(name = "id", unique = true, nullable = false)
     private Long id;
     
     @Column(name="siape")
@@ -24,7 +24,6 @@ public class Bibliotecario extends Pessoa{
     }
 
     public Bibliotecario(String siape, String nome, String email, String telefone, String senha, boolean ativo, Date dataAtualizacao, Date dataCriacao) {
-        super(nome, email, telefone, senha, ativo, dataAtualizacao, dataCriacao);
         this.siape = siape;
     }
 
