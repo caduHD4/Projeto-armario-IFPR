@@ -8,7 +8,7 @@
         </property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/armario
+            jdbc:mysql://localhost/sistema-biblioteca
         </property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">
@@ -20,5 +20,6 @@
         <mapping class="br.edu.ifpr.paranavai.model.Armario"/>
         <mapping class="br.edu.ifpr.paranavai.model.Bibliotecario"/>
         <mapping class="br.edu.ifpr.paranavai.model.Estudante"/>
+        <mapping class="br.edu.ifpr.paranavai.model.Reserva"/>
     </session-factory>
 </hibernate-configuration>
