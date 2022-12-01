@@ -14,7 +14,7 @@ import java.util.List;
 public interface ArmarioDao {
     public List<Armario> listarTodos();
     public Armario buscarPorId(Long armario);
-    public Armario inserir(Armario armario);
+    public void inserir(Armario armario);
     public void atualizar(Armario armario);
     public void excluir(Armario armario);
     

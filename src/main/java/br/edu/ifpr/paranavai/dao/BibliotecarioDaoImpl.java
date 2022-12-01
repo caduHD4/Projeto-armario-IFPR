@@ -5,7 +5,7 @@
 package br.edu.ifpr.paranavai.dao;
 
 import br.edu.ifpr.paranavai.conexao.HibernateUtil;
-import br.edu.ifpr.paranavai.model.Estudante;
+import br.edu.ifpr.paranavai.model.Bibliotecario;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -13,55 +13,44 @@ import org.hibernate.Session;
  *
  * @author Leonardo
  */
-public class EstudanteDaoImpl implements EstudanteDao {
+public class BibliotecarioDaoImpl implements BibliotecarioDao {
     private Session sessao;
 
-    public EstudanteDaoImpl() {
+    public BibliotecarioDaoImpl() {
         this.sessao = HibernateUtil.getSession();
     }
     
     @Override
-    public List<Estudante> listarTodos() {
-        List<Estudante> listaEstudantes = null;
+    public List<Bibliotecario> listarTodos() {
+        List<Bibliotecario> listaBibliotecarios = null;
         try {
             sessao.beginTransaction();
-            listaEstudantes = (List<Estudante>) this.sessao.createQuery("from Estudante").list();
+            listaBibliotecarios = (List<Bibliotecario>) this.sessao.createQuery("from Bibliotecario").list();
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listaEstudantes;
+        return listaBibliotecarios;
     }
     
     @Override
-    public Estudante buscarPorId(Long id) {
-        Estudante estudante = null;
+    public Bibliotecario buscarPorId(Long id) {
+        Bibliotecario bibliotecario = null;
         try {
             sessao.beginTransaction();
-            estudante = (Estudante) sessao.get(Estudante.class, id);
+            bibliotecario = (Bibliotecario) sessao.get(Bibliotecario.class, id);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return estudante;
+        return bibliotecario;
     }
 
     @Override
-    public void inserir(Estudante estudante) {
+    public void inserir(Bibliotecario bibliotecario) {
         try {
             sessao.beginTransaction();
-            sessao.persist(estudante);
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void atualizar(Estudante estudante) {
-        try {
-            sessao.beginTransaction();
-            sessao.update(estudante);
+            sessao.persist(bibliotecario);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,13 +58,26 @@ public class EstudanteDaoImpl implements EstudanteDao {
     }
 
     @Override
-    public void excluir(Estudante estudante) {
+    public void atualizar(Bibliotecario bibliotecario) {
         try {
             sessao.beginTransaction();
-            sessao.delete(estudante);
+            sessao.update(bibliotecario);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void excluir(Bibliotecario bibliotecario) {
+        try {
+            sessao.beginTransaction();
+            sessao.delete(bibliotecario);
+            sessao.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
 }

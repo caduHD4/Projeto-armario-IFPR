@@ -24,8 +24,8 @@ public class ArmarioService {
         return dao.buscarPorId(id);
     }
 
-    public static Armario inserir(Armario armario) {
-        return dao.inserir(armario);
+    public static void inserir(Armario armario) {
+        dao.inserir(armario);
     }
 
     public static void atualizar(Armario armario) {

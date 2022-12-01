@@ -14,7 +14,7 @@ import java.util.List;
 public interface EstudanteDao {
     public List<Estudante> listarTodos();
     public Estudante buscarPorId(Long estudante);
-    public Estudante inserir(Estudante estudante);
+    public void inserir(Estudante estudante);
     public void atualizar(Estudante estudante);
     public void excluir(Estudante estudante);
     

@@ -24,8 +24,8 @@ public class EstudanteService {
         return dao.buscarPorId(id);
     }
 
-    public static Estudante inserir(Estudante estudante) {
-        return dao.inserir(estudante);
+    public static void inserir(Estudante estudante) {
+        dao.inserir(estudante);
     }
 
     public static void atualizar(Estudante estudante) {

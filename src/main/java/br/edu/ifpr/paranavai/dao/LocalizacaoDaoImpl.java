@@ -5,7 +5,7 @@
 package br.edu.ifpr.paranavai.dao;
 
 import br.edu.ifpr.paranavai.conexao.HibernateUtil;
-import br.edu.ifpr.paranavai.model.Estudante;
+import br.edu.ifpr.paranavai.model.Localizacao;
 import java.util.List;
 import org.hibernate.Session;
 
@@ -13,55 +13,44 @@ import org.hibernate.Session;
  *
  * @author Leonardo
  */
-public class EstudanteDaoImpl implements EstudanteDao {
+public class LocalizacaoDaoImpl implements LocalizacaoDao {
     private Session sessao;
 
-    public EstudanteDaoImpl() {
+    public LocalizacaoDaoImpl() {
         this.sessao = HibernateUtil.getSession();
     }
     
     @Override
-    public List<Estudante> listarTodos() {
-        List<Estudante> listaEstudantes = null;
+    public List<Localizacao> listarTodos() {
+        List<Localizacao> listaLocalizacoes = null;
         try {
             sessao.beginTransaction();
-            listaEstudantes = (List<Estudante>) this.sessao.createQuery("from Estudante").list();
+            listaLocalizacoes = (List<Localizacao>) this.sessao.createQuery("from Localizacao").list();
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listaEstudantes;
+        return listaLocalizacoes;
     }
     
     @Override
-    public Estudante buscarPorId(Long id) {
-        Estudante estudante = null;
+    public Localizacao buscarPorId(Long id) {
+        Localizacao localizacao = null;
         try {
             sessao.beginTransaction();
-            estudante = (Estudante) sessao.get(Estudante.class, id);
+            localizacao = (Localizacao) sessao.get(Localizacao.class, id);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return estudante;
+        return localizacao;
     }
 
     @Override
-    public void inserir(Estudante estudante) {
+    public void inserir(Localizacao localizacao) {
         try {
             sessao.beginTransaction();
-            sessao.persist(estudante);
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void atualizar(Estudante estudante) {
-        try {
-            sessao.beginTransaction();
-            sessao.update(estudante);
+            sessao.persist(localizacao);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,10 +58,21 @@ public class EstudanteDaoImpl implements EstudanteDao {
     }
 
     @Override
-    public void excluir(Estudante estudante) {
+    public void atualizar(Localizacao localizacao) {
         try {
             sessao.beginTransaction();
-            sessao.delete(estudante);
+            sessao.update(localizacao);
+            sessao.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void excluir(Localizacao localizacao) {
+        try {
+            sessao.beginTransaction();
+            sessao.delete(localizacao);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

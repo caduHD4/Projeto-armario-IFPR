@@ -22,47 +22,35 @@ public class ArmarioDaoImpl implements ArmarioDao {
     
     @Override
     public List<Armario> listarTodos() {
-        List<Armario> pessoas = null;
+        List<Armario> listaArmarios = null;
         try {
             sessao.beginTransaction();
-            pessoas = (List<Armario>) this.sessao.createQuery("from Armario").list();
+            listaArmarios = (List<Armario>) this.sessao.createQuery("from Armario").list();
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return pessoas;
+        return listaArmarios;
     }
     
     @Override
     public Armario buscarPorId(Long id) {
-        Armario pessoa = null;
+        Armario armario = null;
         try {
             sessao.beginTransaction();
-            pessoa = (Armario) sessao.get(Armario.class, id);
+            armario = (Armario) sessao.get(Armario.class, id);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return pessoa;
+        return armario;
     }
 
     @Override
-    public Armario inserir(Armario pessoa) {
+    public void inserir(Armario armario) {
         try {
             sessao.beginTransaction();
-            sessao.persist(pessoa);
-            sessao.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return pessoa;
-    }
-
-    @Override
-    public void atualizar(Armario localizacao) {
-        try {
-            sessao.beginTransaction();
-            sessao.update(localizacao);
+            sessao.persist(armario);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,10 +58,21 @@ public class ArmarioDaoImpl implements ArmarioDao {
     }
 
     @Override
-    public void excluir(Armario localizacao) {
+    public void atualizar(Armario armario) {
         try {
             sessao.beginTransaction();
-            sessao.delete(localizacao);
+            sessao.update(armario);
+            sessao.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void excluir(Armario armario) {
+        try {
+            sessao.beginTransaction();
+            sessao.delete(armario);
             sessao.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
